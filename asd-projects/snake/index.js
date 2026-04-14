@@ -11,13 +11,14 @@ var highScoreElement = $("#highScore");
 
 // Game Variables
 var score = 0; // variable to keep track of the score
-var started = false; // variable to keep track of whether the game has started
-
+var started = false;  // variable to keep track of whether the game has started
+var colors = ["blue", "orange" , "white" , "blue" , "orange" , "white"];
+var colorIndex = 0;
 // TODO 4, Part 1: Create the apple variable
-
+var apple = {};
 
 // TODO 5, Part 1: Create the snake variable
-
+const snake = {};
 
 // Constant Variables
 var ROWS = 20;
@@ -48,13 +49,20 @@ init();
 
 function init() {
   // TODO 5, Part 2: initialize the snake
-  
-  
-  // TODO 4, Part 3: initialize the apple
+  snake.body = []; 
 
+  makeSnakeSquare(10, 10)
+
+  makeSnakeSquare (10, 9)
+
+  makeSnakeSquare(10, 8);
+
+  snake.head = snake.body[0];   
+  // TODO 4, Part 3: initialize the apple
+makeApple();
 
   // TODO 6, Part 1: Initialize the interval
-
+updateInterval = setInterval(update, 100);
 
 }
 
